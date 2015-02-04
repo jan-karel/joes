@@ -131,31 +131,6 @@ var elem=[];
 	return elem;
 }
 
-/*run in our scripts*/
-var scriptTags = document.getElementsByTagName("script");
-
-
-
-for(var i=0;i<scriptTags.length;i++) 
-{
-      	if(scriptTags[i].src && scriptTags[i].src.match(/joes\.js(\?.*)?$/)) 
-	{
-		var path1 = scriptTags[i].src.replace(/joes\.js(\?.*)?$/,'');
-		var m_image_path = path1.replace("/js", "/icons");
-		var m_js_path = path1;
-		var m_media_path = path1.replace("/js", "");
-		var m_css_path = path1.replace("/js", "/css");
-	}
-}
-
-
-/*css auto prefix, we will kick it right in*/
- var fileref=document.createElement("link")
-  fileref.setAttribute("rel", "stylesheet")
-  fileref.setAttribute("type", "text/css")
-  fileref.setAttribute("href", m_css_path+'animate.css')
-  document.getElementsByTagName("head")[0].appendChild(fileref)
-
 //ajax
 Joes.ajax = Joes.prototype = j_ajax;
 Joes.get = Joes.prototype = j_ajax_get;
